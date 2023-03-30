@@ -1,9 +1,9 @@
 package com.example.my.Constance
 
 object Constance {
-    const val RABOCHIU_SALARY = 1000
-    const val INGINER_SALARY = 2000
-    const val DIRECTOR_SALARY = 3000
+    const val RABOCHIU_SALARY = 5000
+    const val INGINER_SALARY = 15000
+    const val DIRECTOR_SALARY = 30000
 
     const val DIRECTOR = "ANDREY"
     const val INGINER = "IVAN"

@@ -12,7 +12,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="200dp"
         android:text="Введите ваше имя."
         android:textColor="#D80E0B0C"
         android:textSize="20sp"
@@ -72,5 +72,16 @@
         app:layout_constraintEnd_toEndOf="@+id/edValue"
         app:layout_constraintStart_toStartOf="@+id/edValue"
         app:layout_constraintTop_toBottomOf="@+id/edValue" />
+
+    <ImageView
+        android:id="@+id/imphoto"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:layout_marginBottom="32dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:srcCompat="@drawable/dyly" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
