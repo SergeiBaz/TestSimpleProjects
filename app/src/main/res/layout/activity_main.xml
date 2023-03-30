@@ -8,46 +8,69 @@
     android:visibility="visible"
     tools:context=".MainActivity">
 
-
     <TextView
-        android:id="@+id/tvResult"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
-        android:text="324 и 34"
+        android:layout_marginTop="60dp"
+        android:text="Введите ваше имя."
+        android:textColor="#D80E0B0C"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/bFold"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edValue"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Сложить"
-        app:layout_constraintEnd_toEndOf="@+id/tvResult"
-        app:layout_constraintStart_toStartOf="@+id/tvResult"
-        app:layout_constraintTop_toBottomOf="@+id/tvResult" />
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Поле ввода"
+        android:inputType="textPersonName"
+        android:textColorHint="#D8930B39"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="107dp"
+        android:layout_height="131dp"
+        android:gravity="center"
+        android:textColor="#FF5722"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/button1"
+        app:layout_constraintEnd_toEndOf="@+id/editPasport"
+        app:layout_constraintStart_toStartOf="@+id/editPasport"
+        app:layout_constraintTop_toBottomOf="@+id/editPasport"
+        app:layout_constraintVertical_bias="0.591" />
 
     <Button
-        android:id="@+id/bSubtract"
-        android:layout_width="wrap_content"
+        android:id="@+id/button1"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Отнять"
-        app:layout_constraintEnd_toEndOf="@+id/bFold"
-        app:layout_constraintStart_toStartOf="@+id/bFold"
-        app:layout_constraintTop_toBottomOf="@+id/bFold" />
+        android:layout_marginTop="236dp"
+        android:text="Выдать зарплату"
+        app:backgroundTint="#4CAF50"
+        app:layout_constraintEnd_toEndOf="@+id/edValue"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edValue"
+        app:layout_constraintTop_toBottomOf="@+id/edValue" />
 
-    <Button
-        android:id="@+id/bMultiply"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editPasport"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Умножить"
-        app:layout_constraintEnd_toEndOf="@+id/bSubtract"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="@+id/bSubtract"
-        app:layout_constraintTop_toBottomOf="@+id/bSubtract" />
+        android:ems="10"
+        android:hint="Введите ваш код"
+        android:inputType="numberPassword"
+        app:layout_constraintEnd_toEndOf="@+id/edValue"
+        app:layout_constraintStart_toStartOf="@+id/edValue"
+        app:layout_constraintTop_toBottomOf="@+id/edValue" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

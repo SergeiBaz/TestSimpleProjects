@@ -2,40 +2,60 @@ package com.example.my
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
+import com.example.my.Constance.Constance
 import com.example.my.databinding.ActivityMainBinding
+
 
 
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass: ActivityMainBinding
-    val a = 324
-    val b = 34
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
-
-        bindingClass.bFold.setOnClickListener {
-            val result = a + b
-            bindingClass.tvResult.text = "Результат сложения равен : $result"
-        }
-        bindingClass.bSubtract.setOnClickListener {
-            val result = a - b
-            bindingClass.tvResult.text = "Результат вычитания равен : $result"
-        }
-        bindingClass.bMultiply.setOnClickListener {
-            val result = a * b
-            bindingClass.tvResult.text = "Результат умножения равен : $result"
-        }
     }
 
-    override fun onPause() {
-        super.onPause()
+    override fun onResume() {
+        super.onResume()
+        bindingClass.button1.setOnClickListener {
+         val result = bindingClass.edValue.text.toString().toUpperCase()
+            when (result){
+                Constance.RABOCHIU -> {
+                    val tempText = "Получите ваши ${Constance.RABOCHIU_SALARY}"
+                    bindingClass.tvResult.text = if (bindingClass.editPasport.text.toString().toInt() == Constance.RABOCHIU_PASSWORD){
+                     tempText }
+                    else {
+                        "Неверный пароль"
+                    }
+                }
+
+                Constance.INGINER -> {
+                    val tempText = "Получите ваши ${Constance.INGINER_SALARY}"
+                    bindingClass.tvResult.text = if (bindingClass.editPasport.text.toString().toInt() == Constance.INGENER_PASSWORD){
+                     tempText }
+                    else{
+                        "Неверный пароль"
+                    }
+                }
+
+                Constance.DIRECTOR -> {
+                    val tempText = "Получите ваши ${Constance.DIRECTOR_SALARY}"
+                    bindingClass.tvResult.text = if (bindingClass.editPasport.text.toString().toInt() == Constance.DIRECTOR_PASSWORD){
+                     tempText }
+                    else{
+                        "Неверный пароль"
+                    }
+                }
+
+                else -> bindingClass.tvResult.text = "Вашего имя: ${result.toLowerCase()}. " +
+                        "Нет в базе,проверьте правильность ввода"
+            }
+            bindingClass.tvResult.visibility = View.VISIBLE
+
+
+        }
+
     }
 }
